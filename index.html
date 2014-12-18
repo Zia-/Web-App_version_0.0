@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+
+<body>
+  <div id="map-canvas"></div>
+<script src="http://openlayers.org/en/master/build/ol.js"></script>
+<script>
+
+var map = new ol.Map({
+    target: 'map-canvas', 
+    randerer: 'canvas', 
+    layers: [ new ol.layer.Tile({
+      source: new ol.source.OSM(),
+    })
+  ],
+    view: new ol.View({
+    	projection: 'EPSG:900913',
+	center : [ 3231250.983275, 5027718.050995 ],
+	zoom : 10,
+	minZoom: 3,
+    maxZoom: 19
+  }),
+  controls: ol.control.defaults().extend([
+                                          new ol.control.FullScreen()
+                                        ])
+});
+
+
+
+</script>
+</body>
+
+</html>
+
